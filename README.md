@@ -13,7 +13,7 @@ Interactive map from LAC's entrepreneurship ecosystem responding to the pandemic
 
 ## Use the data
 
-The data was also though to be used by the broad community of researchers, journalists and developers. If you have any ideas or doubts about using the data, do not hesitate to submit an [issue](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/issues/new).
+The data was also though to be used by the broad community of innovators, journalists and developers. If you have any ideas or doubts about using the data, do not hesitate to submit an [issue](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/issues/new).
 
 The latest version of the data is easily available through the methods below.
 
