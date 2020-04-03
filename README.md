@@ -1,4 +1,4 @@
-# Coronavirus Innovators mapping Data
+# IDB Lab Map of LAC innovators – Coronavirus
 
 Data from the map https://bidlab.org/en/map-LAC-innovators-Covid-19. 
 
@@ -13,7 +13,7 @@ Interactive map from LAC's entrepreneurship ecosystem responding to the pandemic
 
 ## Use the data
 
-The data was also though to be used by the broad community of innovators, journalists and developers. If you have any ideas or doubts about using the data, do not hesitate to submit an [issue](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/issues/new).
+The data was also thought to be used by the broad community of the innovation ecosystem and developers. If you have any ideas or doubts about using the data, do not hesitate to submit an [issue](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/issues/new).
 
 The latest version of the data is easily available through the methods below.
 
@@ -21,9 +21,9 @@ The latest version of the data is easily available through the methods below.
 
 [Download](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
-That vizualization tool pull the data directly from the map and use open source libraries to build an web friendly table.
+The visualization tool pulls the data directly from the map and uses open source libraries to build a web friendly table.
 
-Main Open Source used libraries :
+*Main Open Source used libraries:*
 
 * https://jquery.com/
 * https://getbootstrap.com/
@@ -51,15 +51,15 @@ Obs: Not sure if it works. Submit a PR if you find a way to do it.
 
 ## Download subset for a specific country or solution category
 
-Use the options fron the visulization and download data as csv or XLSX.
+Use the options fron the visualization and download data as csv or XLSX.
 
 [Click here to open](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
 ## Don't forget to cite us :)
 
-To cite the IDB and IDB Lab Coronavirus Innovator Mapping, please use the following reference:
+To cite the IDB Lab Map of LAC innovators – Coronavirus, please use the following reference:
 
-> Inter-American Development Bank and IDB Lab. "Map of LAC innovators (COVID19)". 2020. Inter-American Development Bank. https://bidlab.org/en/map-LAC-innovators-Covid-19
+> Inter-American Development Bank and IDB Lab. "IDB Lab Map of LAC innovators – Coronavirus". 2020. Inter-American Development Bank. https://bidlab.org/en/map-LAC-innovators-Covid-19
 
 
 This work is licensed under a Creative Commons IGO 3.0 - see the [LICENSE.md](/LICENSE) file for details.
