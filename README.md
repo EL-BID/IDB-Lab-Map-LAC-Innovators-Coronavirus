@@ -46,11 +46,6 @@ df<-read.csv('https://idb-lab-test.maps.arcgis.com/sharing/rest/content/items/70
 ```
 Obs: Not sure if it works. Submit a PR if you find a way to do it.
 
-### Stata
-
-```
-import delimited using "https://docs.google.com/spreadsheets/d/16SIYidLScgFZOeqpHmAo_u_rFmuxxpCCWeRAXSDOT3I/export?format=csv&id", clear
-```
 
 ## Download subset for a specific country or solution category
 
