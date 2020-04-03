@@ -21,7 +21,9 @@ The latest version of the data is easily available through the methods below.
 
 [Download](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
-That vizualization tool pull the data directly forn the map and use open source libraries to buld an web table, main ones are :
+That vizualization tool pull the data directly from the map and use open source libraries to buld an web table.
+
+Main Open Source used libraries :
 
 * https://jquery.com/
 * https://getbootstrap.com/
