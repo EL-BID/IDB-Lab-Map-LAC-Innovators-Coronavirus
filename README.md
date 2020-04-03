@@ -17,11 +17,11 @@ The data was also though to be used by the broad community of innovators, journa
 
 The latest version of the data is easily available through the methods below.
 
-### Mannualy visualize, filter and download the data
+### Visualize, filter and download the data using dynamic web interface
 
 [Download](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
-That vizualization tool pull the data directly from the map and use open source libraries to buld an web table.
+That vizualization tool pull the data directly from the map and use open source libraries to build an web friendly table.
 
 Main Open Source used libraries :
 
