@@ -62,5 +62,5 @@ To cite the IDB and IDB Lab Coronavirus Innovator Mapping, please use the follow
 > Inter-American Development Bank and IDB Lab. "Map of LAC innovators (COVID19)". 2020. Inter-American Development Bank. https://bidlab.org/en/map-LAC-innovators-Covid-19
 
 
-This work is licensed under a Creative Commons IGO 3.0 - see the [LICENSE.md](/LICENSE.md) file for details.
+This work is licensed under a Creative Commons IGO 3.0 - see the [LICENSE.md](/LICENSE) file for details.
 
