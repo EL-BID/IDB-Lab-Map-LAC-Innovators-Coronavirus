@@ -6,8 +6,8 @@ This map shows innovators from Latin America and the Caribbean that are leading 
 
 
 ![landing_dash](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/blob/master/Map-lac-innovators-covid.png?raw=true)
-Go to dashboard: [ENGLISH](https://bidlab.org/en/map-LAC-innovators-Covid-19)
-[ESPAÑOL](https://bidlab.org/en/map-LAC-innovators-Covid-19)
+
+[Go to map](https://bidlab.org/en/map-LAC-innovators-Covid-19)
 
 Interactive map from LAC's entrepreneurship ecosystem responding to the pandemic.
 
