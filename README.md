@@ -53,7 +53,7 @@ Obs: Not sure if it works. Submit a PR if you find a way to do it.
 
 ## Download subset for a specific country or solution category
 
-Use the options fron the visualization and download data as csv or XLSX.
+Use the options from the visualization and download data as csv or XLSX.
 
 [Click here to open](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
