@@ -23,7 +23,7 @@ The latest version of the data is easily available through the methods below.
 
 The visualization tool pulls the data directly from the map and uses open source libraries to build a web friendly table. Filter, browse and search the data before exporting it as a CSV or XLSX:
 
-![table preview](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/blob/master/web-table-preview.png?raw=true)
+[![table preview](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/blob/master/web-table-preview.png?raw=true)](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
 
 **Main Open Source used libraries:**
 
