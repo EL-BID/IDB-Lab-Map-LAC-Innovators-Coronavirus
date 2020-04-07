@@ -13,11 +13,13 @@ This map shows innovators from Latin America and the Caribbean that are leading 
 
 Interactive map from LAC's entrepreneurship ecosystem responding to the pandemic.
 
+
 ## Access and use of the data
 
 The data was also thought to be used by the broad community of the innovation ecosystem and developers. If you have any ideas or doubts about using the data, do not hesitate to submit an [issue](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus/issues/new).
 
 The latest version of the data is easily available through the methods below.
+
 
 ### Visualize, filter and download the data using dynamic web interface
 
@@ -33,6 +35,7 @@ The visualization tool pulls the data directly from the map and uses open source
 * https://getbootstrap.com/
 * https://bootstrap-table.com/docs/getting-started/usage/
 * https://github.com/typeiii/jquery-csv
+* https://www.chartjs.org/
 
 
 ### Python
@@ -42,6 +45,7 @@ import pandas as pd
 url = 'https://idb-lab-test.maps.arcgis.com/sharing/rest/content/items/70776ec1e2574ab88f75aad69bdabda9/data'
 df = pd.read_csv(url)
 ```
+
 
 ### R
 
@@ -58,6 +62,18 @@ Obs: Not sure if it works. Submit a PR if you find a way to do it.
 Use the options from the visualization and download data as csv or XLSX.
 
 [Click here to open](https://el-bid.github.io/IDB-Lab-Map-LAC-Innovators-Coronavirus/)
+
+
+## Authors
+
+- Code: 
+ - Julien Collaer IDB Lab (linkedin)[https://www.linkedin.com/in/jcollaer]
+ 
+- Map Data:
+ - Yuri Suarez Dillon IDB Lab
+ - Christina Nolasco IDB Lab
+ - [...]
+
 
 ## Don't forget to cite us :)
 

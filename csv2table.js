@@ -163,8 +163,7 @@ var processData = function(data) {
 		refreshFilter();
 	});
 
-	refreshFilter();
-	
+
 };
 
 
@@ -356,6 +355,122 @@ $(document).ready(function() {
         dataType: "text",
         success: function(data) {
           processData(data);
+		  initCharts($('#datatable'));
+		  refreshFilter();
         }
      });
 });
+
+/**
+ * 
+ * chartjs initialization binfing it to a datatable
+ * 
+ * 
+ * @since      2020
+ */
+var initCharts = function(datatable) {
+	eventName = 'post-body.bs.table';
+	datatable.on(eventName, function (e, data) {
+	  refreshGraphs();
+	});
+};
+
+/**
+ * 
+ * Funtion that retrieve subtotals for fields occurence into a data fron a datatable
+ *
+ * @return a configuration object for labels and data ready to be use by chartjs
+ * 
+ * @todo ordering by count desc
+ * 
+ * @since      2020
+ */
+var getTotalsForAttribute = function(currentData, field) {
+	var structure = {
+		labels:[],
+		datas:[{data:[]}]
+	};
+	$.each(currentData, function(i,d) { 
+		var fieldValue = d[field];
+		//console.log(fieldValue);
+		var a = structure.labels.indexOf(fieldValue);
+		if(a == -1) {
+			structure.labels.push(fieldValue)
+			structure.datas[0].data.push(1);
+		} else {
+			structure.datas[0].data[a] ++;
+		}
+	});
+	return structure;
+};
+
+
+/**
+ * 
+ * Refresh charts js graph function
+ * 
+ * Will recompute the data if is this filtered and redraw/destroy graph
+ * 
+ * @todo make it clean by not using global vars but implementing a class singleton object 
+ * 
+ * @since      2020
+ */
+var chartCategories;
+var chartCountries;
+var refreshGraphs = function() {
+	
+	var currentData = $('#datatable').bootstrapTable("getData");
+	
+	var countries = getTotalsForAttribute(currentData, "country");
+
+	var categories = getTotalsForAttribute(currentData, "category");
+	
+	if (chartCountries)
+		chartCountries.destroy();
+	
+	if (chartCategories)
+		chartCategories.destroy();
+	
+	chartCountries = new Chart("chartCanvas1", {
+		type: 'doughnut',
+		data: {
+			labels: countries.labels,
+			datasets: countries.datas
+		},
+		options: {
+			plugins: {
+				colorschemes: {
+					scheme: 'brewer.Paired12'
+				}
+			},
+			animation: {
+			  duration: 1000,
+			},
+			legend: {
+				display: false,
+			},			
+		}
+	});
+
+	chartCategories = new Chart("chartCanvas2", {
+		type: 'doughnut',
+		data: {
+			labels: categories.labels,
+			datasets: categories.datas
+		},
+		options: {
+			plugins: {
+				colorschemes: {
+					scheme: 'brewer.Paired12'
+				}
+			},
+			animation: {
+			  duration: 1000,
+			},
+			legend: {
+				display: false,
+			},
+		}
+	});
+
+};
