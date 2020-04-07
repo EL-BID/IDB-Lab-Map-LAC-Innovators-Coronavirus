@@ -1,4 +1,25 @@
-var csv;
+/**
+ * Simple example of creating a web interactive table from CSV data.
+ * 
+ * The goal is showing a simple example of using open libraries to vizualize
+ * CSV data in a browser.
+ * Along with sorting, filtering and exporting capabilities.
+ *
+ * Ppen source libraries : 
+ * - Bootstrap (https://getbootstrap.com/)
+ * - JQuery (https://jquery.com/)
+ * - bootstrap-table (https://bootstrap-table.com/docs/getting-started/usage/)
+ * - boostratp-table-export
+ * - JQuery-CSV (https://github.com/typeiii/jquery-csv)
+ * 
+ * @link   https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus
+ * 
+ * @author Julien Collaer @IDB Lab
+ * 
+ * @datte  2020
+ */
+ 
+/** jshint {} */
 
 var countries = [];
 var categories = [];
@@ -6,13 +27,33 @@ var sources = [];
 var showDetails = false;
 
 
+/**
+* Extending String for a truncate capability
+*/
 String.prototype.trunc = String.prototype.trunc ||
       function(n){
           return (this.length > n) ? this.substr(0, n-1) + '&hellip;' : this;
       };
-var processData=function(data) {
+
+
+/**
+ * 
+ * Function receiving CSV response data object Must be CSV
+ * Will parse CSV into a list of objects 
+ * Creating table structure.
+ * Creating combox filtering options for 3 columns: 
+ *  - category
+ *  - country 
+ *  - source
+ * Initializing filtering event on combobox
+ * Setting show detail event for switching showing full description text or not
+ * 
+ * @since      2020
+ *
+ * @param {data}   html response MUST BE CSV content
+ */
+var processData = function(data) {
   csv = $.csv.toObjects(data);
-	
 	
   
   $('#datatable').bootstrapTable({
@@ -22,7 +63,6 @@ var processData=function(data) {
       toolbar: "#toolbar-table",
       showExport: true,
       exportDataType: "all",
-      //showToggle: true,
       showColumns: true,
       showFullscreen: true,
       showFooter: true,
@@ -59,10 +99,8 @@ var processData=function(data) {
       }, {
         field: 'description',
         title: 'Description',
-        //cardVisible: true,
         width: '40',
         widthUnit: '%',
-        //visible: true,
 	sortable: false,
 	formatter: descriptionFormatter,
 	detailFormatter: detailDescriptionFormatter
@@ -87,7 +125,6 @@ var processData=function(data) {
   categories = [];
   sources = [""];
   $.each(csv, function(i,d) { 
-  	//console.log(d);
 	if(! countries.includes(d.country)) {
 	  countries.push(d.country);
 	  $("#country")
@@ -107,7 +144,6 @@ var processData=function(data) {
 	
 	$("#country").selectpicker('refresh');
 	$("#category").selectpicker('refresh');
-
 	$("#source").selectpicker('refresh');
 	
 	$("#country" ).change(function() {
@@ -131,6 +167,14 @@ var processData=function(data) {
 	
 };
 
+
+/**
+ * 
+ * Function refreshing filters to datatable from combobox current values
+ * 
+ * @since      2020
+ *
+ */
 var refreshFilter = function() {
 
 	var country = $("#country").val();
@@ -147,9 +191,18 @@ var refreshFilter = function() {
 		filters["source"] = source;
 	};
 	$('#datatable').bootstrapTable('filterBy', filters);
-	//console.log(filters);
 };
 
+
+/**
+ * link account formatter to se url link form URL field value (missing http prefix)
+ * 
+ * @since      2020
+ *
+ * @param {value}   field value being evaluated
+ * @param {row}     current row object being evaluated
+ * @param {index}   integer index of current row being evaluated
+ */
 var linkAccount = function (value, row, index) {
 	return [
 		'<a href="http://',
@@ -161,6 +214,17 @@ var linkAccount = function (value, row, index) {
 		'</a>'].join('');
 };
 
+
+/**
+ * link formatter to se url link form same field value
+ * value must be an URL without HTTPS prefix
+ * 
+ * @since      2020
+ *
+ * @param {value}   field value being evaluated
+ * @param {row}     current row object being evaluated
+ * @param {index}   integer index of current row being evaluated
+ */
 var LinkFormatter = function(value, row, index) {
     return [
 	'<a href="http://',
@@ -172,15 +236,32 @@ var LinkFormatter = function(value, row, index) {
 	'</a>'].join('');
 }
 
+
+/**
+ * Total Formater for being use at the bottom of the table 
+ * bootstrap table total formatter option
+ * Will return a string contactenating the length of rows
+ * 
+ * @since      2020
+ *
+ * @param {data}   the whole table data with current filters applied
+ */
 var TotalFormatter = function(data) {
     return 'Total: ' + data.length;
 };
 
+
+/**
+ * Total formatter to get number of differents countries in the data
+ * 
+ * @since      2020
+ *
+ * @param {data}   the whole table data with current filters applied
+ */
 var CountriesFormatter = function(data) {
   var currentData = $("#datatable").bootstrapTable('getData');
   var countries_f = [];
   $.each(currentData, function(i,d) { 
-  	//console.log(d);
 	if(! countries_f.includes(d.country)) {
 	  countries_f.push(d.country);
 	}
@@ -188,11 +269,20 @@ var CountriesFormatter = function(data) {
     return countries_f.length + ' countries';
  };
 
+
+/**
+ * Total formatter to get the 3 most frequent categories along the number
+ * of occurence next to each ones.
+ * 
+ * @since      2020
+ *
+ * @param {data}   the whole table data with current filters applied
+ */
+
 var CategoriesFormatter = function(data) {
     var currentData = $("#datatable").bootstrapTable('getData');
   var categories_f = [];
   $.each(currentData, function(i,d) { 
-  	//console.log(d);
 	if(! categories_f.includes(d.category)) {
 	  categories_f.push(d.category);
 	}
@@ -204,22 +294,30 @@ var CategoriesFormatter = function(data) {
     var text = categories_f.length + ' categories.';
     //https://stackoverflow.com/questions/1069666/sorting-object-property-by-values
     var keysSorted = Object.keys(cata).sort(function(a,b){return cata[b]-cata[a]});
-    /*$.each(cata, function(i, nb) { 
-	    text += (text ? "<br />": "") + i.trunc(28) + ": " + nb;
-    });*/
     i=0
-	//console.log(keysSorted);
+
     $.each(keysSorted, function(position, key) { 
     if (i > 2) {
 	    return;
     }
-	    //console.log(key);
+
     text += "<br />" + key.toString().trunc(18) + ": " + cata[key];
 	    
     i++;
     });
     return text;
  };
+
+
+/**
+ * Description field table formatter to truncate of not the content using a global parameter.
+ * 
+ * @since      2020
+ *
+ * @param {value}   field value being evaluated
+ * @param {row}     current row object being evaluated
+ * @param {index}   integer index of current row being evaluated
+ */
 
 var descriptionFormatter  = function (value, row, index) {
 	if (showDetails)
@@ -228,10 +326,29 @@ var descriptionFormatter  = function (value, row, index) {
 		return value.trunc(133);
 };
 
+/**
+ * Detail formatter for description to replace new lines and return cariage to
+ * actual lines jumps using html break tags
+ * 
+ * @since      2020
+ *
+ * @param {value}   field value being evaluated
+ * @param {row}     current row object being evaluated
+ * @param {index}   integer index of current row being evaluated
+ */
+
 var detailDescriptionFormatter  = function (value, row, index) {
 	return row.description.replace(/(\r\n|\n|\r)/gm,"<br />");
 };
 
+/**
+ * 
+ * When document is ready. 
+ * AJAX request to get CSV data from URL and calling the processData function upon receiving it.
+ * @todo managing errors, etc.
+ * 
+ * @since      2020
+ */
 $(document).ready(function() {
   $.ajax({
         type: "GET",
