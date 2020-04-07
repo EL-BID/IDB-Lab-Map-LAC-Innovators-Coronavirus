@@ -67,12 +67,12 @@ Use the options from the visualization and download data as csv or XLSX.
 ## Authors
 
 - Code: 
-  - Julien Collaer IDB Lab [linkedin](https://www.linkedin.com/in/jcollaer)
+  - [Julien Collaer, IDB Lab](https://www.linkedin.com/in/jcollaer)
  
 - Map Data:
   - Yuri Suarez Dillon IDB Lab
   - Christina Nolasco IDB Lab
-  - [...]
+  - [IDB Lab](https://bidlab.org/en/)
 
 
 ## Don't forget to cite us :)
