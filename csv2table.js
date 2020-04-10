@@ -432,7 +432,7 @@ var refreshGraphs = function() {
 		chartCategories.destroy();
 	
 	chartCountries = new Chart("chartCanvas1", {
-		type: 'doughnut',
+		type: 'bar',
 		data: {
 			labels: countries.labels,
 			datasets: countries.datas
@@ -453,7 +453,7 @@ var refreshGraphs = function() {
 	});
 
 	chartCategories = new Chart("chartCanvas2", {
-		type: 'doughnut',
+		type: 'bar',
 		data: {
 			labels: categories.labels,
 			datasets: categories.datas
