@@ -71,7 +71,7 @@ Use the options from the visualization and download data as csv or XLSX.
  
 - Map Data:
   - Yuri Suarez Dillon IDB Lab
-  - Christina Nolasco IDB Lab
+  - Cristina Nolasco IDB Lab
   - [IDB Lab](https://bidlab.org/en/)
 
 
