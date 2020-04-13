@@ -351,7 +351,7 @@ var detailDescriptionFormatter  = function (value, row, index) {
 $(document).ready(function() {
   $.ajax({
         type: "GET",
-        url: "https://idb-lab-test.maps.arcgis.com/sharing/rest/content/items/70776ec1e2574ab88f75aad69bdabda9/data",
+        url: "https://idb-gis.maps.arcgis.com/sharing/rest/content/items/70434cfbfcd5440486ab5e870302184c/data",
         dataType: "text",
         success: function(data) {
           processData(data);
