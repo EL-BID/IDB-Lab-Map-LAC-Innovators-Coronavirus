@@ -42,7 +42,7 @@ The visualization tool pulls the data directly from the map and uses open source
 
 ```
 import pandas as pd
-url = 'https://idb-lab-test.maps.arcgis.com/sharing/rest/content/items/70776ec1e2574ab88f75aad69bdabda9/data'
+url = 'https://idb-gis.maps.arcgis.com/sharing/rest/content/items/70434cfbfcd5440486ab5e870302184c/data'
 df = pd.read_csv(url)
 ```
 
@@ -52,7 +52,7 @@ df = pd.read_csv(url)
 ```
 library(readr)
 
-df<-read.csv('https://idb-lab-test.maps.arcgis.com/sharing/rest/content/items/70776ec1e2574ab88f75aad69bdabda9/data')
+df<-read.csv('https://idb-gis.maps.arcgis.com/sharing/rest/content/items/70434cfbfcd5440486ab5e870302184c/data')
 ```
 Obs: Not sure if it works. Submit a PR if you find a way to do it.
 
