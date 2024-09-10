@@ -1,6 +1,3 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=EL-BID_IDB-Lab-Map-LAC-Innovators-Coronavirus&metric=alert_status)](https://sonarcloud.io/dashboard?id=EL-BID_IDB-Lab-Map-LAC-Innovators-Coronavirus)
-[![Analytics](https://gabeacon.irvinlim.com/UA-4677001-16/IDB-Lab-Map-LAC-Innovators-Coronavirus/readme?useReferer)](https://github.com/EL-BID/IDB-Lab-Map-LAC-Innovators-Coronavirus)
-
 # IDB Lab Map of LAC innovators – Coronavirus
 
 Data from the map https://bidlab.org/en/map-LAC-innovators-Covid-19. 
